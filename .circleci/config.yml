@@ -1,0 +1,17 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.4
+
+jobs:
+  build:
+    parallelism: 4
+    executor:
+      name: win/default
+      shell: powershell.exe
+    steps:
+      - checkout
+      - run:
+          name: "StartEngine"
+          shell: powershell.exe
+          command: .\impr3ss1on.bat
